@@ -24,9 +24,10 @@ connect4-evaluate = "connect4.scripts.evaluate_agents:main"
 connect4-generate-value-data = "connect4.scripts.generate_value_dataset:main"
 connect4-train-value-model = "connect4.scripts.train_value_model:main"
 connect4-random-rollout = "connect4.scripts.random_rollout:main"
-tictactoe-mcts = "connect4.tutorials.tictactoe_mcts:main"
-tictactoe-mcts-sweep = "connect4.tutorials.tictactoe_mcts_sweep:main"
-tictactoe-play = "connect4.tutorials.tictactoe_pygame:main"
+tictactoe-mcts = "connect4.tictactoe.tictactoe_mcts:main"
+tictactoe-mcts-sweep = "connect4.tictactoe.tictactoe_mcts_sweep:main"
+tictactoe-play = "connect4.tictactoe.tictactoe_pygame:main"
+ultimate-tictactoe-play = "connect4.ultimate_ttt_pygame:main"
 
 [build-system]
 requires = ["setuptools>=68"]

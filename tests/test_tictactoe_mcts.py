@@ -1,7 +1,7 @@
 import unittest
 
 from connect4.mcts import MCTS
-from connect4.tutorials.tictactoe_mcts import EMPTY, PLAYER_O, PLAYER_X, TicTacToeState
+from connect4.tictactoe.tictactoe_mcts import EMPTY, PLAYER_O, PLAYER_X, TicTacToeState
 
 
 class TicTacToeMCTSTests(unittest.TestCase):
