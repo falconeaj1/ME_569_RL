@@ -14,47 +14,42 @@ uv sync --dev
 source .venv/bin/activate
 ```
 
-Then launch the Connect Four app:
+If the virtual environment is not activated, prefix commands with `uv run`.
+
+Launch the Connect Four GUI:
 
 ```bash
 connect4-play
 ```
 
 The GUI lets you switch modes, agents, MCTS strength, and the evaluator without
-restarting. CLI arguments are optional and only set the initial state. For
-example:
+restarting. CLI arguments are optional and only set the initial state:
 
 ```bash
 connect4-play --mode human-ai --ai mcts --human-player yellow
 ```
 
-If the virtual environment is not activated, prefix commands with `uv run`:
+The Connect Four evaluator strip shows per-column MCTS estimates while the
+side panel tracks the Red-vs-Yellow position estimate:
+
+![Connect Four evaluator demo](docs/media/connect4-demo.gif)
+
+Launch the smaller Tic Tac Toe debugging GUI:
+
+```bash
+tictactoe-play
+```
+
+The Tic Tac Toe GUI is useful because it overlays exact minimax values for a
+solved game before moving to the larger Connect Four search problem.
+
+![Tic Tac Toe evaluator demo](docs/media/tictactoe-demo.gif)
+
+For command-line runs without activation:
 
 ```bash
 uv run connect4-play
-```
-
-## Project Layout
-
-```text
-src/connect4/core.py                    # Connect Four state, legal moves, win/tie logic
-src/connect4/agents.py                  # random, heuristic, and MCTS agents
-src/connect4/mcts.py                    # game-independent UCT MCTS
-src/connect4/env.py                     # Gymnasium-style environments
-src/connect4/pygame_app.py              # Connect Four pygame app and evaluator UI
-src/connect4/value_model.py             # lightweight offline value network
-src/connect4/scripts/evaluate_agents.py # tournament and report experiment scripts
-src/connect4/scripts/generate_value_dataset.py
-src/connect4/scripts/train_value_model.py
-src/connect4/tutorials/                 # Tic Tac Toe MCTS testbed scripts
-notebooks/                              # tutorial notebooks and exploratory analysis
-tests/                                  # unit tests
-```
-
-The Tic Tac Toe MCTS tutorial now lives in:
-
-```text
-notebooks/mcts_tutorial_tictactoe.ipynb
+uv run tictactoe-play
 ```
 
 ## Connect Four App
@@ -123,6 +118,14 @@ budget and rollout policy, not as a solved-game statement. Under ideal play,
 standard Connect Four is a first-player win, but this implementation is an
 approximate search engine.
 
+One important UI detail: the evaluator search keeps running in small slices
+while the board position is unchanged. If a human pauses to think, the
+evaluator can accumulate far more visits than the selected AI profile gets for
+its actual move. The move-playing MCTS does not reuse the evaluator's tree; for
+example, `Strong 1500/2.5s` is still compute-bound to that per-move budget even
+if the evaluator has been thinking for much longer. This is why the visible
+evaluator can help a human find moves that beat the capped AI.
+
 ## MCTS Variant
 
 The main search algorithm is UCT MCTS:
@@ -183,6 +186,23 @@ Scope of this testbed:
 - It does not include Connect Four gravity, larger branching factors,
   heuristic rollouts, value-network cutoffs, or exploration-constant sweeps.
   Those are evaluated in the Connect Four experiments.
+
+## Project Layout
+
+```text
+src/connect4/core.py                    # Connect Four state, legal moves, win/tie logic
+src/connect4/agents.py                  # random, heuristic, and MCTS agents
+src/connect4/mcts.py                    # game-independent UCT MCTS
+src/connect4/env.py                     # Gymnasium-style environments
+src/connect4/pygame_app.py              # Connect Four pygame app and evaluator UI
+src/connect4/value_model.py             # lightweight offline value network
+src/connect4/scripts/evaluate_agents.py # tournament and report experiment scripts
+src/connect4/scripts/generate_value_dataset.py
+src/connect4/scripts/train_value_model.py
+src/connect4/tutorials/                 # Tic Tac Toe MCTS testbed scripts
+notebooks/                              # tutorial notebooks and exploratory analysis
+tests/                                  # unit tests
+```
 
 ## Gymnasium-Style Environments
 

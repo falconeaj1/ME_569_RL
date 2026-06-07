@@ -42,7 +42,7 @@ TIME_CHOICES: list[float | None] = [None, 0.1, 0.25, 0.5, 1.0, 2.0]
 
 @dataclass
 class Button:
-    label: str
+    label: str | Callable[[], str]
     rect: pygame.Rect
     action: Callable[[], None]
     active: Callable[[], bool] = lambda: False
@@ -269,21 +269,21 @@ class TicTacToePygameApp:
 
     def _layout_buttons(self) -> None:
         x = BOARD_PIXELS + 18
-        y = 66
+        y = 176
         full_width = PANEL_WIDTH - 36
         half_width = (full_width - 8) // 2
-        height = 28
-        row_gap = 7
-        section_gap = 11
+        height = 25
+        row_gap = 5
+        section_gap = 8
 
-        def add_full(label: str, action: Callable[[], None], active: Callable[[], bool] = lambda: False) -> None:
+        def add_full(label: str | Callable[[], str], action: Callable[[], None], active: Callable[[], bool] = lambda: False) -> None:
             nonlocal y
             self.buttons.append(Button(label, pygame.Rect(x, y, full_width, height), action, active))
             y += height + row_gap
 
         def add_pair(
-            left: tuple[str, Callable[[], None], Callable[[], bool]],
-            right: tuple[str, Callable[[], None], Callable[[], bool]],
+            left: tuple[str | Callable[[], str], Callable[[], None], Callable[[], bool]],
+            right: tuple[str | Callable[[], str], Callable[[], None], Callable[[], bool]],
         ) -> None:
             nonlocal y
             self.buttons.append(Button(left[0], pygame.Rect(x, y, half_width, height), left[1], left[2]))
@@ -309,12 +309,12 @@ class TicTacToePygameApp:
         )
         y += section_gap
         add_pair(
-            ("Iters -", lambda: self._step_iterations(-1), lambda: False),
-            ("Iters +", lambda: self._step_iterations(1), lambda: False),
+            (lambda: f"Iters - ({self.mcts_iterations})", lambda: self._step_iterations(-1), lambda: False),
+            (lambda: f"Iters + ({self.mcts_iterations})", lambda: self._step_iterations(1), lambda: False),
         )
         add_pair(
-            ("Time -", lambda: self._step_time_limit(-1), lambda: False),
-            ("Time +", lambda: self._step_time_limit(1), lambda: False),
+            (lambda: f"Time - ({self._time_label()})", lambda: self._step_time_limit(-1), lambda: False),
+            (lambda: f"Time + ({self._time_label()})", lambda: self._step_time_limit(1), lambda: False),
         )
         add_full("Timed 1s strong", lambda: self._set_mcts_iterations(100_000, 1.0), lambda: self.mcts_time_limit == 1.0)
         y += section_gap
@@ -390,37 +390,26 @@ class TicTacToePygameApp:
         pygame.draw.rect(self.screen, PANEL_BG, pygame.Rect(BOARD_PIXELS, 0, PANEL_WIDTH, WINDOW_HEIGHT))
         self.screen.blit(self.font.render("Tic Tac Toe", True, WHITE), (BOARD_PIXELS + 18, 16))
 
-        for button in self.buttons:
-            color = BUTTON_ACTIVE if button.active() else BUTTON_BG
-            pygame.draw.rect(self.screen, color, button.rect, border_radius=5)
-            label = self.small_font.render(button.label, True, WHITE)
-            self.screen.blit(label, (button.rect.x + 9, button.rect.y + 6))
-
-        y = 405
+        y = 55
         x_value = minimax_value(state_key(self.state), self.state.current_player, PLAYER_X)
         details = [
             f"Mode: {self.mode}",
             f"AI: {self.ai}",
-            f"MCTS: {self.mcts_iterations} iters",
-            f"Time: {self.mcts_time_limit or 'off'}s",
+            f"Budget: {self.mcts_iterations} iters / {self._time_label()}",
+            "Stops at first cap hit",
             f"Last search: {self.last_search_visits or '-'} iters",
             f"Perfect value for X: {x_value:+.0f}",
         ]
         for detail in details:
             self.screen.blit(self.small_font.render(detail, True, MUTED), (BOARD_PIXELS + 18, y))
-            y += 20
+            y += 18
 
-        y += 10
-        legend = [
-            "Overlay values are for",
-            "the player to move:",
-            "+1 win, 0 draw, -1 loss.",
-            "Green good, red bad.",
-            "[ ] iters, < > time.",
-        ]
-        for line in legend:
-            self.screen.blit(self.tiny_font.render(line, True, MUTED), (BOARD_PIXELS + 18, y))
-            y += 16
+        for button in self.buttons:
+            color = BUTTON_ACTIVE if button.active() else BUTTON_BG
+            pygame.draw.rect(self.screen, color, button.rect, border_radius=5)
+            label_text = button.label() if callable(button.label) else button.label
+            label = self.small_font.render(label_text, True, WHITE)
+            self.screen.blit(label, (button.rect.x + 9, button.rect.y + 4))
 
         if self.last_move_text:
             self.screen.blit(self.tiny_font.render(self.last_move_text[:42], True, WHITE), (BOARD_PIXELS + 18, WINDOW_HEIGHT - 24))
@@ -435,6 +424,9 @@ class TicTacToePygameApp:
         player = "X" if self.state.current_player == PLAYER_X else "O"
         actor = "AI" if self._current_actor_is_ai() else "Human"
         return f"{player} to move: {actor}"
+
+    def _time_label(self) -> str:
+        return "off" if self.mcts_time_limit is None else f"{self.mcts_time_limit:g}s"
 
 
 def parse_player(value: str) -> int:

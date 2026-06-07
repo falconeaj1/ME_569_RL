@@ -2,11 +2,11 @@
 
 **Author:** Andrew Falcone  
 **Course:** ME 569  
-**Date:** TODO
+**Date:** June 5, 2026
 
 ## Abstract
 
-TODO: 150-250 words.
+The main problem we want to address in this paper is how well does Monte Carlo Tree Search methods work for playing and solving the game of Connect 4. 
 
 Include:
 
