@@ -3,7 +3,7 @@
 This project implements and evaluates Monte Carlo Tree Search for Connect Four.
 The codebase is organized around reusable game-state objects so the same rules
 drive interactive pygame play, Gymnasium-style environments, scripted
-experiments, and small MCTS tutorials.
+experiments, and small MCTS testbeds.
 
 ## Quick Start
 
@@ -50,7 +50,18 @@ For command-line runs without activation:
 ```bash
 uv run connect4-play
 uv run tictactoe-play
+uv run ultimate-tictactoe-play
 ```
+
+Launch the Ultimate Tic Tac Toe GUI:
+
+```bash
+ultimate-tictactoe-play
+```
+
+The Ultimate Tic Tac Toe app reuses the shared MCTS engine with a 9x9 board,
+forced local-board targeting, completed-board free moves, local board claims,
+and a full-game evaluation bar.
 
 ## Connect Four App
 
@@ -183,7 +194,7 @@ Scope of this testbed:
 
 - It validates the shared MCTS interface and data flow on a tiny solved game.
 - It helps debug selection, expansion, rollout, and backpropagation.
-- It does not include Connect Four gravity, larger branching factors,
+- It does not include Connect Four column actions, larger branching factors,
   heuristic rollouts, value-network cutoffs, or exploration-constant sweeps.
   Those are evaluated in the Connect Four experiments.
 
@@ -199,7 +210,7 @@ src/connect4/value_model.py             # lightweight offline value network
 src/connect4/scripts/evaluate_agents.py # tournament and report experiment scripts
 src/connect4/scripts/generate_value_dataset.py
 src/connect4/scripts/train_value_model.py
-src/connect4/tutorials/                 # Tic Tac Toe MCTS testbed scripts
+src/connect4/tictactoe/                 # Tic Tac Toe MCTS testbed scripts
 notebooks/                              # tutorial notebooks and exploratory analysis
 tests/                                  # unit tests
 ```

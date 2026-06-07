@@ -12,7 +12,7 @@ from pathlib import Path
 import numpy as np
 
 from connect4.mcts import MCTS
-from connect4.tutorials.tictactoe_mcts import PLAYER_O, PLAYER_X, TicTacToeState
+from connect4.tictactoe.tictactoe_mcts import PLAYER_O, PLAYER_X, TicTacToeState
 
 
 DEFAULT_ITERATIONS = (1, 5, 10, 50, 100, 500, 1_000)

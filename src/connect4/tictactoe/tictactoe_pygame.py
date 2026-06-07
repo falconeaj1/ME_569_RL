@@ -13,7 +13,7 @@ import pygame
 import pygame.gfxdraw
 
 from connect4.mcts import MCTS
-from connect4.tutorials.tictactoe_mcts import EMPTY, PLAYER_O, PLAYER_X, TicTacToeState
+from connect4.tictactoe.tictactoe_mcts import EMPTY, PLAYER_O, PLAYER_X, TicTacToeState
 
 
 BOARD_PIXELS = 540
