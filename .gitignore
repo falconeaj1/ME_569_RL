@@ -1,5 +1,17 @@
 .vscode/
 outputs/
+outputs/*
+!outputs/*.csv
+!outputs/*.png
+!outputs/value_data/
+outputs/value_data/*
+!outputs/value_data/connect4_value_dataset_200g_metadata.json
+!outputs/value_data/connect4_value_dataset_200g.npz
+!outputs/value_models/
+outputs/value_models/*
+!outputs/value_models/connect4_value_model_200g.json
+!outputs/value_models/connect4_value_model_200g.npz
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
