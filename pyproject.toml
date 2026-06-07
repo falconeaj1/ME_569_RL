@@ -1,0 +1,36 @@
+[project]
+name = "me-569-rl"
+version = "0.1.0"
+description = "Connect Four reinforcement learning experiments with MCTS"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gymnasium>=1.3.0",
+    "ipykernel>=7.2.0",
+    "matplotlib>=3.10.9",
+    "numpy>=2.4.5",
+    "pygame>=2.6.1",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "pytest>=8.3.4",
+]
+
+[project.scripts]
+connect4-play = "connect4.pygame_app:main"
+connect4-evaluate = "connect4.scripts.evaluate_agents:main"
+connect4-generate-value-data = "connect4.scripts.generate_value_dataset:main"
+connect4-train-value-model = "connect4.scripts.train_value_model:main"
+connect4-random-rollout = "connect4.scripts.random_rollout:main"
+tictactoe-mcts = "connect4.tutorials.tictactoe_mcts:main"
+tictactoe-mcts-sweep = "connect4.tutorials.tictactoe_mcts_sweep:main"
+tictactoe-play = "connect4.tutorials.tictactoe_pygame:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
