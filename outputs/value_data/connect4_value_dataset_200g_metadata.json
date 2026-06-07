@@ -1,0 +1,1430 @@
+{
+  "games": 200,
+  "positions": 4764,
+  "seed": 0,
+  "agent_mix": [
+    {
+      "spec": "heuristic",
+      "weight": 0.15
+    },
+    {
+      "spec": "mcts:100",
+      "weight": 0.3
+    },
+    {
+      "spec": "mcts:500",
+      "weight": 0.35
+    },
+    {
+      "spec": "mcts:1500",
+      "weight": 0.2
+    }
+  ],
+  "elapsed_seconds": 1136.0010570840677,
+  "labels": {
+    "values_current_player": "final game outcome from the side-to-move perspective at each stored state",
+    "values_red": "final game outcome from Red perspective"
+  },
+  "games_detail": [
+    {
+      "game_index": 0,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 17
+    },
+    {
+      "game_index": 1,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 16
+    },
+    {
+      "game_index": 2,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 23
+    },
+    {
+      "game_index": 3,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 40
+    },
+    {
+      "game_index": 4,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 5,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 28
+    },
+    {
+      "game_index": 6,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "yellow",
+      "moves": 38
+    },
+    {
+      "game_index": 7,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 22
+    },
+    {
+      "game_index": 8,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 19
+    },
+    {
+      "game_index": 9,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 10,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 37
+    },
+    {
+      "game_index": 11,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 22
+    },
+    {
+      "game_index": 12,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 28
+    },
+    {
+      "game_index": 13,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 20
+    },
+    {
+      "game_index": 14,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 15,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 16,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 40
+    },
+    {
+      "game_index": 17,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 20
+    },
+    {
+      "game_index": 18,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "yellow",
+      "moves": 20
+    },
+    {
+      "game_index": 19,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 15
+    },
+    {
+      "game_index": 20,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 19
+    },
+    {
+      "game_index": 21,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 33
+    },
+    {
+      "game_index": 22,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 16
+    },
+    {
+      "game_index": 23,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 16
+    },
+    {
+      "game_index": 24,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 34
+    },
+    {
+      "game_index": 25,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 17
+    },
+    {
+      "game_index": 26,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 27,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 33
+    },
+    {
+      "game_index": 28,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 33
+    },
+    {
+      "game_index": 29,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 30,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:1500",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 31,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:1500",
+      "winner": "tie",
+      "moves": 42
+    },
+    {
+      "game_index": 32,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 32
+    },
+    {
+      "game_index": 33,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 19
+    },
+    {
+      "game_index": 34,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:1500",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 35,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 21
+    },
+    {
+      "game_index": 36,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 32
+    },
+    {
+      "game_index": 37,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 20
+    },
+    {
+      "game_index": 38,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 29
+    },
+    {
+      "game_index": 39,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 20
+    },
+    {
+      "game_index": 40,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 23
+    },
+    {
+      "game_index": 41,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 42,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 23
+    },
+    {
+      "game_index": 43,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 22
+    },
+    {
+      "game_index": 44,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 39
+    },
+    {
+      "game_index": 45,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 36
+    },
+    {
+      "game_index": 46,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 9
+    },
+    {
+      "game_index": 47,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 22
+    },
+    {
+      "game_index": 48,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 26
+    },
+    {
+      "game_index": 49,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 15
+    },
+    {
+      "game_index": 50,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 17
+    },
+    {
+      "game_index": 51,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 19
+    },
+    {
+      "game_index": 52,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 53,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 54,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "red",
+      "moves": 29
+    },
+    {
+      "game_index": 55,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 56,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 25
+    },
+    {
+      "game_index": 57,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "yellow",
+      "moves": 36
+    },
+    {
+      "game_index": 58,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 20
+    },
+    {
+      "game_index": 59,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:1500",
+      "winner": "red",
+      "moves": 33
+    },
+    {
+      "game_index": 60,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 15
+    },
+    {
+      "game_index": 61,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 62,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 22
+    },
+    {
+      "game_index": 63,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 25
+    },
+    {
+      "game_index": 64,
+      "red_agent": "mcts:500",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 65,
+      "red_agent": "mcts:500",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 66,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "tie",
+      "moves": 42
+    },
+    {
+      "game_index": 67,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 20
+    },
+    {
+      "game_index": 68,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 21
+    },
+    {
+      "game_index": 69,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 32
+    },
+    {
+      "game_index": 70,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 29
+    },
+    {
+      "game_index": 71,
+      "red_agent": "mcts:500",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 23
+    },
+    {
+      "game_index": 72,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 73,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 20
+    },
+    {
+      "game_index": 74,
+      "red_agent": "heuristic",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 75,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 76,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 77,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 34
+    },
+    {
+      "game_index": 78,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 22
+    },
+    {
+      "game_index": 79,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 80,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 18
+    },
+    {
+      "game_index": 81,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 32
+    },
+    {
+      "game_index": 82,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 40
+    },
+    {
+      "game_index": 83,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 84,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 29
+    },
+    {
+      "game_index": 85,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 22
+    },
+    {
+      "game_index": 86,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 36
+    },
+    {
+      "game_index": 87,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 14
+    },
+    {
+      "game_index": 88,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "yellow",
+      "moves": 36
+    },
+    {
+      "game_index": 89,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 13
+    },
+    {
+      "game_index": 90,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 91,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "red",
+      "moves": 31
+    },
+    {
+      "game_index": 92,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 93,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 94,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "tie",
+      "moves": 42
+    },
+    {
+      "game_index": 95,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 25
+    },
+    {
+      "game_index": 96,
+      "red_agent": "mcts:500",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 97,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 29
+    },
+    {
+      "game_index": 98,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 33
+    },
+    {
+      "game_index": 99,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 27
+    },
+    {
+      "game_index": 100,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 21
+    },
+    {
+      "game_index": 101,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 39
+    },
+    {
+      "game_index": 102,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 38
+    },
+    {
+      "game_index": 103,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 27
+    },
+    {
+      "game_index": 104,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 17
+    },
+    {
+      "game_index": 105,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 22
+    },
+    {
+      "game_index": 106,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 12
+    },
+    {
+      "game_index": 107,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 38
+    },
+    {
+      "game_index": 108,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 109,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 110,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 9
+    },
+    {
+      "game_index": 111,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 112,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 21
+    },
+    {
+      "game_index": 113,
+      "red_agent": "mcts:500",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 23
+    },
+    {
+      "game_index": 114,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 40
+    },
+    {
+      "game_index": 115,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:100",
+      "winner": "yellow",
+      "moves": 32
+    },
+    {
+      "game_index": 116,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 42
+    },
+    {
+      "game_index": 117,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 22
+    },
+    {
+      "game_index": 118,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 17
+    },
+    {
+      "game_index": 119,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 9
+    },
+    {
+      "game_index": 120,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 36
+    },
+    {
+      "game_index": 121,
+      "red_agent": "mcts:100",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 15
+    },
+    {
+      "game_index": 122,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 17
+    },
+    {
+      "game_index": 123,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 24
+    },
+    {
+      "game_index": 124,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 18
+    },
+    {
+      "game_index": 125,
+      "red_agent": "mcts:500",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 126,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 31
+    },
+    {
+      "game_index": 127,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 12
+    },
+    {
+      "game_index": 128,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 36
+    },
+    {
+      "game_index": 129,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 40
+    },
+    {
+      "game_index": 130,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 131,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 34
+    },
+    {
+      "game_index": 132,
+      "red_agent": "mcts:500",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 23
+    },
+    {
+      "game_index": 133,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 23
+    },
+    {
+      "game_index": 134,
+      "red_agent": "heuristic",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 135,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 9
+    },
+    {
+      "game_index": 136,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 18
+    },
+    {
+      "game_index": 137,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "red",
+      "moves": 31
+    },
+    {
+      "game_index": 138,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:1500",
+      "winner": "red",
+      "moves": 39
+    },
+    {
+      "game_index": 139,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 27
+    },
+    {
+      "game_index": 140,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 31
+    },
+    {
+      "game_index": 141,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 8
+    },
+    {
+      "game_index": 142,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 19
+    },
+    {
+      "game_index": 143,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 144,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 29
+    },
+    {
+      "game_index": 145,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 34
+    },
+    {
+      "game_index": 146,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 18
+    },
+    {
+      "game_index": 147,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 22
+    },
+    {
+      "game_index": 148,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 32
+    },
+    {
+      "game_index": 149,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 17
+    },
+    {
+      "game_index": 150,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 34
+    },
+    {
+      "game_index": 151,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 12
+    },
+    {
+      "game_index": 152,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 25
+    },
+    {
+      "game_index": 153,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:1500",
+      "winner": "red",
+      "moves": 33
+    },
+    {
+      "game_index": 154,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 19
+    },
+    {
+      "game_index": 155,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 15
+    },
+    {
+      "game_index": 156,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 36
+    },
+    {
+      "game_index": 157,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 14
+    },
+    {
+      "game_index": 158,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 14
+    },
+    {
+      "game_index": 159,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 27
+    },
+    {
+      "game_index": 160,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 20
+    },
+    {
+      "game_index": 161,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 26
+    },
+    {
+      "game_index": 162,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 23
+    },
+    {
+      "game_index": 163,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "yellow",
+      "moves": 30
+    },
+    {
+      "game_index": 164,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 42
+    },
+    {
+      "game_index": 165,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 40
+    },
+    {
+      "game_index": 166,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 16
+    },
+    {
+      "game_index": 167,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:1500",
+      "winner": "red",
+      "moves": 33
+    },
+    {
+      "game_index": 168,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 18
+    },
+    {
+      "game_index": 169,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 34
+    },
+    {
+      "game_index": 170,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 27
+    },
+    {
+      "game_index": 171,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 13
+    },
+    {
+      "game_index": 172,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 28
+    },
+    {
+      "game_index": 173,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 174,
+      "red_agent": "heuristic",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 175,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 42
+    },
+    {
+      "game_index": 176,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 23
+    },
+    {
+      "game_index": 177,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "red",
+      "moves": 35
+    },
+    {
+      "game_index": 178,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 9
+    },
+    {
+      "game_index": 179,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 17
+    },
+    {
+      "game_index": 180,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 17
+    },
+    {
+      "game_index": 181,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 30
+    },
+    {
+      "game_index": 182,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 16
+    },
+    {
+      "game_index": 183,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 27
+    },
+    {
+      "game_index": 184,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "yellow",
+      "moves": 28
+    },
+    {
+      "game_index": 185,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 22
+    },
+    {
+      "game_index": 186,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 36
+    },
+    {
+      "game_index": 187,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 15
+    },
+    {
+      "game_index": 188,
+      "red_agent": "heuristic",
+      "yellow_agent": "heuristic",
+      "winner": "red",
+      "moves": 7
+    },
+    {
+      "game_index": 189,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 14
+    },
+    {
+      "game_index": 190,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 20
+    },
+    {
+      "game_index": 191,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 9
+    },
+    {
+      "game_index": 192,
+      "red_agent": "mcts:1500",
+      "yellow_agent": "mcts:100",
+      "winner": "red",
+      "moves": 11
+    },
+    {
+      "game_index": 193,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 26
+    },
+    {
+      "game_index": 194,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:500",
+      "winner": "yellow",
+      "moves": 32
+    },
+    {
+      "game_index": 195,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 19
+    },
+    {
+      "game_index": 196,
+      "red_agent": "heuristic",
+      "yellow_agent": "mcts:100",
+      "winner": "yellow",
+      "moves": 18
+    },
+    {
+      "game_index": 197,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 36
+    },
+    {
+      "game_index": 198,
+      "red_agent": "mcts:500",
+      "yellow_agent": "mcts:500",
+      "winner": "red",
+      "moves": 33
+    },
+    {
+      "game_index": 199,
+      "red_agent": "mcts:100",
+      "yellow_agent": "mcts:1500",
+      "winner": "yellow",
+      "moves": 22
+    }
+  ]
+}
