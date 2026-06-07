@@ -13,8 +13,6 @@ from connect4.mcts import MCTS
 PLAYER_X = 1
 PLAYER_O = -1
 EMPTY = 0
-X = PLAYER_X
-O = PLAYER_O
 
 
 @dataclass(frozen=True)

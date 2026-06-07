@@ -13,7 +13,7 @@ import pygame
 import pygame.gfxdraw
 
 from connect4.mcts import MCTS
-from connect4.tutorials.tictactoe_mcts import EMPTY, O, X, TicTacToeState
+from connect4.tutorials.tictactoe_mcts import EMPTY, PLAYER_O, PLAYER_X, TicTacToeState
 
 
 BOARD_PIXELS = 540
@@ -60,9 +60,9 @@ def draw_smooth_circle(
 
 
 def winner_label(winner: int | None) -> str:
-    if winner == X:
+    if winner == PLAYER_X:
         return "X"
-    if winner == O:
+    if winner == PLAYER_O:
         return "O"
     return "Tie"
 
@@ -193,7 +193,7 @@ class TicTacToePygameApp:
         action, visits = self._select_ai_action()
         elapsed = time.perf_counter() - start
         self.state = self.state.next_state(action)
-        actor = "X" if -self.state.current_player == X else "O"
+        actor = "X" if -self.state.current_player == PLAYER_X else "O"
         self.last_search_visits = visits
         suffix = "" if visits is None else f", {visits} iters"
         self.last_move_text = f"{actor} {self.ai} played {action} in {elapsed:.2f}s{suffix}"
@@ -299,8 +299,8 @@ class TicTacToePygameApp:
         add_full("AI-AI", lambda: self._set_mode("ai-ai"), lambda: self.mode == "ai-ai")
         y += section_gap
         add_pair(
-            ("Human X", lambda: self._set_human_player(X), lambda: self.human_player == X),
-            ("Human O", lambda: self._set_human_player(O), lambda: self.human_player == O),
+            ("Human X", lambda: self._set_human_player(PLAYER_X), lambda: self.human_player == PLAYER_X),
+            ("Human O", lambda: self._set_human_player(PLAYER_O), lambda: self.human_player == PLAYER_O),
         )
         y += section_gap
         add_pair(
@@ -347,9 +347,9 @@ class TicTacToePygameApp:
         for row in range(3):
             for col in range(3):
                 value = int(self.state.board[row, col])
-                if value == X:
+                if value == PLAYER_X:
                     self._draw_x(row, col)
-                elif value == O:
+                elif value == PLAYER_O:
                     self._draw_o(row, col)
 
     def _draw_evaluation_shading(self) -> None:
@@ -397,7 +397,7 @@ class TicTacToePygameApp:
             self.screen.blit(label, (button.rect.x + 9, button.rect.y + 6))
 
         y = 405
-        x_value = minimax_value(state_key(self.state), self.state.current_player, X)
+        x_value = minimax_value(state_key(self.state), self.state.current_player, PLAYER_X)
         details = [
             f"Mode: {self.mode}",
             f"AI: {self.ai}",
@@ -432,7 +432,7 @@ class TicTacToePygameApp:
                 return "Tie game"
             return f"{winner_label(winner)} wins"
 
-        player = "X" if self.state.current_player == X else "O"
+        player = "X" if self.state.current_player == PLAYER_X else "O"
         actor = "AI" if self._current_actor_is_ai() else "Human"
         return f"{player} to move: {actor}"
 
@@ -440,9 +440,9 @@ class TicTacToePygameApp:
 def parse_player(value: str) -> int:
     normalized = value.strip().lower()
     if normalized in {"x", "1"}:
-        return X
+        return PLAYER_X
     if normalized in {"o", "-1"}:
-        return O
+        return PLAYER_O
     raise argparse.ArgumentTypeError("player must be x or o")
 
 
@@ -450,7 +450,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Play and inspect Tic Tac Toe agents.")
     parser.add_argument("--mode", choices=["human-human", "human-ai", "ai-ai"], default="human-ai")
     parser.add_argument("--ai", choices=["random", "mcts"], default="mcts")
-    parser.add_argument("--human-player", type=parse_player, default=X)
+    parser.add_argument("--human-player", type=parse_player, default=PLAYER_X)
     parser.add_argument("--mcts-iterations", type=int, default=200)
     parser.add_argument("--mcts-time-limit", type=float, default=None)
     parser.add_argument("--seed", type=int, default=None)

@@ -12,7 +12,7 @@ from pathlib import Path
 import numpy as np
 
 from connect4.mcts import MCTS
-from connect4.tutorials.tictactoe_mcts import O, X, TicTacToeState
+from connect4.tutorials.tictactoe_mcts import PLAYER_O, PLAYER_X, TicTacToeState
 
 
 DEFAULT_ITERATIONS = (1, 5, 10, 50, 100, 500, 1_000)
@@ -71,9 +71,9 @@ def run_tie_rate_sweep(
         for game_index in range(1, games_per_level + 1):
             winner, moves = play_mcts_self_play_game(iterations, rng)
             move_counts.append(moves)
-            if winner == X:
+            if winner == PLAYER_X:
                 x_wins += 1
-            elif winner == O:
+            elif winner == PLAYER_O:
                 o_wins += 1
             else:
                 ties += 1

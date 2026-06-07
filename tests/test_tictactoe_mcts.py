@@ -1,33 +1,33 @@
 import unittest
 
 from connect4.mcts import MCTS
-from connect4.tutorials.tictactoe_mcts import EMPTY, O, X, TicTacToeState
+from connect4.tutorials.tictactoe_mcts import EMPTY, PLAYER_O, PLAYER_X, TicTacToeState
 
 
 class TicTacToeMCTSTests(unittest.TestCase):
     def test_tictactoe_detects_winner(self) -> None:
         state = TicTacToeState.from_rows(
             [
-                [X, X, X],
-                [O, O, EMPTY],
+                [PLAYER_X, PLAYER_X, PLAYER_X],
+                [PLAYER_O, PLAYER_O, EMPTY],
                 [EMPTY, EMPTY, EMPTY],
             ],
-            current_player=O,
+            current_player=PLAYER_O,
         )
 
         self.assertTrue(state.is_terminal)
-        self.assertEqual(state.winner, X)
-        self.assertEqual(state.result_for(X), 1.0)
-        self.assertEqual(state.result_for(O), -1.0)
+        self.assertEqual(state.winner, PLAYER_X)
+        self.assertEqual(state.result_for(PLAYER_X), 1.0)
+        self.assertEqual(state.result_for(PLAYER_O), -1.0)
 
     def test_mcts_selects_only_legal_action(self) -> None:
         state = TicTacToeState.from_rows(
             [
-                [X, O, X],
-                [X, O, O],
-                [O, X, EMPTY],
+                [PLAYER_X, PLAYER_O, PLAYER_X],
+                [PLAYER_X, PLAYER_O, PLAYER_O],
+                [PLAYER_O, PLAYER_X, EMPTY],
             ],
-            current_player=X,
+            current_player=PLAYER_X,
         )
 
         result = MCTS(iterations=20, seed=0).search(state)
