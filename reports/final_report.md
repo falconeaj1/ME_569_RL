@@ -1,3 +1,7 @@
+---
+geometry: margin=0.75in
+---
+
 # Implementing and Evaluating Monte Carlo Tree Search for Connect Four
 
 **Author:** Andrew Falcone  
@@ -6,9 +10,7 @@
 
 ## Abstract
 
-The main problem we want to address in this paper is how well does Monte Carlo Tree Search methods work for playing and solving the game of Connect 4. 
-
-Include:
+The main problem we want to address in this paper is how well does Monte Carlo Tree Search methods work for playing and solving the game of Connect 4. The main analysis of this project is to compare how different reinforcement learning approaches using MCTS compare in different metrics such as winning, time, and compute. The main idea of MCTS is to form tree nodes and to visit states randomly at first, and then evaluate paths using a rollout approach until finding leaf node of win/tie/ or loss and back propagating back to original node, then sampling a certain number of iterations and choosing best action by using most visited state. Note that choosing state depends on both which have performed well and an exploration constant c so that both exploration and exploitation are balanced. Different rollout approaches were examined in this project including making random moves, which is quick but often does not explore the best paths, a heuristic rollout which computes immediate wins/blocks/ and a simple function for determining how good a state is, and a value function which precomputes a variety of games from the MCTS rollouts and then skips rollouts entirely and makes decisions on an immediate value function being even faster than random rollout, but not as effective as a heuristic approach for solving game. In the end a heuristic rollout was the strongest for playing against the baseline model, but with enough iterations random moves seem to slowly converge. Not enough time was spent fine tuning the value model and if more time was available, would want to pursue replicating full alpha go approach.
 
 - Problem: evaluating Monte Carlo Tree Search for Connect Four.
 - Methods: UCT MCTS, random/heuristic/value rollouts, baseline agents, fixed compute budgets.
@@ -17,24 +19,19 @@ Include:
 
 ## 1. Introduction
 
-TODO: Explain why Connect Four is a useful test environment for studying search and reinforcement learning.
+Connect Four is a useful test environment for studying search and reinforcement learning for several reasons. It is a completely solved game so the state size is not as immeasurable as something like go or chess- neither of which have been solved and are orders of magnitude greater in state space. The game is also much more interesting than something like tictactoe which was used as a testbed for debugging and making MCTS algorithm generalizable. Both games share being deterministic and adversarial, but MCTS shines much for tic-tac-toe as the full width search is expensive. The project focuses on how MCTS behavior changes under compute constraints and different rollout policy choices. ADD CITATIONS for MCTS/UCT and related literature (Not sure about TD/alpha work since not directly using them but inspired by them)
 
-Points to include:
-
-- Connect Four is deterministic, turn-based, adversarial, and has a much larger search space than Tic Tac Toe.
-- MCTS is useful when exact full-width search is expensive.
-- The project focuses on how MCTS behavior changes under compute constraints and rollout policy choices.
-- Published-work context: TODO cite MCTS/UCT, TD learning, AlphaGo/AlphaZero or related literature from earlier assignments.
 
 Short project-goal summary:
 
-TODO: This project implemented a reusable Connect Four environment, baseline agents, UCT MCTS, an interactive visualizer, and automated experiments for agent comparison.
+This project implemented a reusable Connect Four environment, baseline agents, UCT MCTS, an interactive visualizer, and automated experiments for agent comparison.
 
 ## 2. Background
 
 ### 2.1 Connect Four Environment
 
 TODO: Describe the board, players, actions, terminal states, and reward convention.
+Board is array of 6x7 starting with 0s, each player is represented by +1 and -1. Game ends when one player can connect 4 pieces horizontally, vertically, or diagonally and the game is a tie if no winner and no legal moves. The actions of the game are the 7 columns, but some may become available as the game progresses due to column being full. The reward convention is that the current player always is treated as plus 1 and when the player switches, the board gets negated (double check this). The environment was made into a gymnasium wrapper to be able to immediately use reinforcement learning algorithms. 
 
 Implementation details:
 
@@ -45,32 +42,23 @@ Implementation details:
 
 ### 2.2 Monte Carlo Tree Search
 
-TODO: Briefly explain the four MCTS phases:
-
-1. Selection
-2. Expansion
-3. Rollout/simulation
-4. Backpropagation
-
-UCT selection equation:
+The Monte Carlo Tree Search algorithm is to essentially attempt to balance exploitation and exploration by making a dictionary of children nodes including their visited value and frequency count. Nodes that have not been visited much are weighted higher as well as states that have been visited and have resulted in winning states. After an action and next state is selected, then a rollout is performed to see how this state resolves. Several different rollout approaches were examined in this project including a random move policy and a simple heuristic. The rollout is played until game completion and then the end result of the game is back propagated to each early node in the tree. Upon choosing the next action, the UCT selection equation is used:
 
 ```text
 score = mean_value + c * sqrt(log(parent_visits) / child_visits)
 ```
 
-Define:
+Where :
 
 - `mean_value`: exploitation term.
 - `c`: exploration constant.
 - square-root term: exploration bonus for less-visited children.
 
-Clarify:
-
 This implementation uses UCT MCTS with random rollouts by default. UCB1 is the exploration-exploitation rule used inside UCT tree selection.
 
 ### 2.3 Baseline Agents
 
-TODO: Describe each baseline.
+The following baseline agents were used to compare different algorithm approaches:
 
 - `random`: uniformly samples legal columns.
 - `bad`: deliberately weak heuristic that prefers low-scoring actions.
